@@ -1,42 +1,49 @@
+// Интерфейс описывает товар, который используется в магазине
 export interface IProductItem {
-  id: string;
-  description: string;
-  image: string;
-  title: string;
-  category: string;
-  price: number | null;
+  id: string;          // Уникальный идентификатор товара
+  description: string; // Описание товара
+  image: string;       // Ссылка на изображение товара
+  title: string;       // Название товара
+  category: string;    // Категория товара
+  price: number | null; // Цена товара (может быть null, если цена не указана)
 }
 
+// Интерфейс описывает действия, которые можно выполнять, например, клик по элементу
 export interface IActions {
-  onClick: (event: MouseEvent) => void;
+  onClick: (event: MouseEvent) => void; // Функция-обработчик клика, принимает объект события
 }
 
-// интерфейс формы заказа
+// Интерфейс формы заказа, описывает данные, которые пользователь вводит при оформлении заказа
 export interface IOrderForm {
-payment?: string;
-address?: string;
-phone?: string;
-email?: string;
-total?: string | number;
+  payment?: string;       // Способ оплаты (может быть не заполнен)
+  address?: string;       // Адрес доставки (может быть не заполнен)
+  phone?: string;         // Контактный телефон (может быть не заполнен)
+  email?: string;         // Электронная почта (может быть не заполнена)
+  total?: string | number; // Общая сумма заказа (может быть строкой или числом)
 }
 
+// Интерфейс заказа, включает в себя данные из формы и список товаров
 export interface IOrder extends IOrderForm {
-  items: string[];
+  items: string[]; // Массив идентификаторов товаров, добавленных в заказ
 }
 
-export interface IOrderLot{
-  payment: string;
-  email: string;
-  phone: string;
-  address: string;
-  total: number;
-  items: string[];
+// Интерфейс заказа для передачи на сервер
+export interface IOrderLot {
+  payment: string;  // Способ оплаты (обязательное поле)
+  email: string;    // Электронная почта (обязательное поле)
+  phone: string;    // Контактный телефон (обязательное поле)
+  address: string;  // Адрес доставки (обязательное поле)
+  total: number;    // Общая сумма заказа (обязательное поле)
+  items: string[];  // Массив идентификаторов товаров (обязательное поле)
 }
 
+// Интерфейс результата заказа, который возвращается от сервера после оформления
 export interface IOrderResult {
-  id: string;
-  total: number;
+  id: string;  // Уникальный идентификатор заказа
+  total: number; // Итоговая сумма заказа
 }
 
-// тип ошибки формы
+// Тип ошибок формы, использует Partial для необязательных полей
 export type FormErrors = Partial<Record<keyof IOrder, string>>;
+// Определяет ошибки для каждого ключа интерфейса IOrder
+// Например: { email: "Некорректный формат", address: "Заполните поле" }

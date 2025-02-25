@@ -1,5 +1,5 @@
 import { ApiListResponse, Api } from '../base/api'
-import { IOrderLot, IOrderResult, IProductItem } from '../../types';
+import { IOrderLot, IOrderResult, IProductItem } from '../../types/types';
 
 export interface IApiModel {
   cdn: string;

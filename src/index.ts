@@ -6,7 +6,7 @@ import { ApiModel } from './components/Model/ApiModel';
 import { DataModel } from './components/Model/DataModel';
 import { Card } from './components/View/Card';
 import { CardPreview } from './components/View/CardPreview';
-import { IOrderForm, IProductItem } from './types';
+import { IOrderForm, IProductItem } from './types/types';
 import { Modal } from './components/View/Modal';
 import { ensureElement } from './utils/utils';
 import { BasketModel } from './components/Model/BasketModel';

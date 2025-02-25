@@ -1,4 +1,4 @@
-import { IProductItem } from "../../types";
+import { IProductItem } from "../../types/types";
 
 export interface IBasketModel {
   basketProducts: IProductItem[];

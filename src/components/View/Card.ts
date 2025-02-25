@@ -1,4 +1,4 @@
-import { IActions, IProductItem } from "../../types";
+import { IActions, IProductItem } from "../../types/types";
 import { IEvents } from "../base/events";
 
 export interface ICard {

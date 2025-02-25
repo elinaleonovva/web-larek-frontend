@@ -1,4 +1,4 @@
-import { IProductItem } from "../../types";
+import { IProductItem } from "../../types/types";
 import { IEvents } from "../base/events";
 
 export interface IDataModel {

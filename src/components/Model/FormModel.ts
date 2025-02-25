@@ -1,5 +1,5 @@
 import { IEvents } from '../base/events';
-import { FormErrors } from '../../types/index'
+import { FormErrors } from '../../types/types'
 
 export interface IFormModel {
   payment: string;
